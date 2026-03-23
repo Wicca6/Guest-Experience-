@@ -1,11 +1,355 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hotel Berghof Amaranth</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Berghof Amaranth | Guest QR Guide</title>
+  <style>
+    :root{
+      --cream:#f5eadc;
+      --light:#fbf6ef;
+      --orange:#cf8c61;
+      --rust:#b86449;
+      --red:#8e4b45;
+      --text:#352924;
+      --muted:#6e5d57;
+      --line:#e7d6c6;
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--light);
+      line-height:1.6;
+    }
+    .hero{
+      background: linear-gradient(180deg, rgba(245,234,220,.98) 0%, rgba(251,246,239,.98) 100%);
+      padding: 52px 20px 34px;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+    }
+    .logo{
+      font-size: clamp(28px, 4.8vw, 54px);
+      letter-spacing:.06em;
+      line-height: .95;
+      color:var(--rust);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin:0;
+    }
+    .sub{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:16px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+    }
+    .welcome{
+      margin:22px auto 10px;
+      font-size: clamp(26px, 5vw, 52px);
+      color:var(--red);
+      font-weight:700;
+    }
+    .tagline{
+      margin:0 auto;
+      max-width:850px;
+      color:var(--muted);
+      font-size:18px;
+    }
+    .nav{
+      margin-top:24px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:11px 16px;
+      border-radius:999px;
+      background:var(--rust);
+      color:white;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid var(--rust);
+    }
+    .btn.alt{
+      background:transparent;
+      color:var(--rust);
+      border:1px solid var(--orange);
+    }
+    .container{
+      width:min(1120px, 92%);
+      margin:28px auto 52px;
+    }
+    .section-title{
+      font-size:30px;
+      margin:28px 0 14px;
+      color:var(--red);
+    }
+    .section-subtitle{
+      color:var(--muted);
+      margin:0 0 12px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+    }
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 10px 25px rgba(112,72,55,.05);
+    }
+    .card h3{
+      margin-top:0;
+      margin-bottom:10px;
+      font-size:22px;
+      color:var(--red);
+    }
+    .card p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+    .info-list, .plain-list{
+      margin:0;
+      padding-left:18px;
+    }
+    .info-list li, .plain-list li{
+      margin:8px 0;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:18px;
+    }
+    a{
+      color:var(--rust);
+    }
+    .mini-note{
+      font-size:14px;
+      color:var(--muted);
+    }
+    .highlight{
+      background:var(--cream);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      margin-top:18px;
+    }
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding:24px 16px 40px;
+    }
+    .badge{
+      display:inline-block;
+      margin:4px 6px 0 0;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f3e2d5;
+      color:var(--red);
+      font-size:13px;
+      font-weight:700;
+    }
+    .stars{
+      letter-spacing:4px;
+      font-size:24px;
+      color:var(--rust);
+      margin-top:8px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hotel Berghof Amaranth</h1>
-  <p>Hello test</p>
+  <header class="hero">
+    <div class="logo">Hotel<br>Berghof<br>Amaranth</div>
+    <div class="sub">Wilderswil · Interlaken</div>
+    <h1 class="welcome">Guest Information & Region Guide</h1>
+    <p class="tagline">All the most important hotel information, transport links, regional highlights and ski resources in one place.</p>
+    <div class="nav">
+      <a class="btn" href="#hotel-info">Hotel Info</a>
+      <a class="btn alt" href="#travel">Transport</a>
+      <a class="btn alt" href="#excursions">Attractions</a>
+      <a class="btn alt" href="#ski">Ski Region</a>
+      <a class="btn alt" href="#guest-card">Guest Card</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hotel-info">
+      <h2 class="section-title">Hotel Information</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Reception</h3>
+          <p><strong>08:00 – 22:00</strong></p>
+        </div>
+        <div class="card">
+          <h3>Wi-Fi / WLAN</h3>
+          <p><strong>Network:</strong> Hotel Berghof</p>
+          <p><strong>Password:</strong> Berg-2026</p>
+        </div>
+        <div class="card">
+          <h3>Breakfast</h3>
+          <p><strong>Please add your breakfast hours here.</strong></p>
+          <p class="mini-note">Example: 07:30 – 10:00</p>
+        </div>
+        <div class="card">
+          <h3>Check-out</h3>
+          <p><strong>11:00</strong></p>
+        </div>
+        <div class="card">
+          <h3>Important Information</h3>
+          <ul class="info-list">
+            <li>Pets allowed: <strong>15 CHF / night</strong></li>
+            <li>Quiet time after <strong>22:00</strong></li>
+            <li>No smoking inside</li>
+            <li>Smoking only on the balcony or in the garden</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Emergency Contact</h3>
+          <p><strong>+41 (0) 76 752 94 07</strong></p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <strong>Leave us a review</strong><br>
+        We hope you enjoy your stay. We would be very happy to receive your feedback.
+        <div class="stars">★★★★★</div>
+      </div>
+    </section>
+
+    <section id="travel">
+      <h2 class="section-title">Train, Tickets & Useful Links</h2>
+      <p class="section-subtitle">Useful travel planning and official ticket links for the Jungfrau region.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>SBB Timetable</h3>
+          <p>Check trains, platforms and tickets directly online.</p>
+          <a class="btn" href="https://www.sbb.ch/en" target="_blank" rel="noopener">Open SBB</a>
+        </div>
+        <div class="card">
+          <h3>SBB Mobile App</h3>
+          <p>Plan journeys and buy tickets on your phone.</p>
+          <a class="btn" href="https://www.sbb.ch/en/travel-information/apps/sbb-mobile.html" target="_blank" rel="noopener">Open App Info</a>
+        </div>
+        <div class="card">
+          <h3>Jungfrau Tickets</h3>
+          <p>Tickets for mountain excursions and regional travel.</p>
+          <a class="btn" href="https://www.jungfrau.ch/en-gb/prices-and-tickets/" target="_blank" rel="noopener">Open Tickets</a>
+        </div>
+        <div class="card">
+          <h3>Tickets at Reception</h3>
+          <p>Train tickets for the Jungfrau region and the <strong>Top of Europe Pass</strong> are available at reception.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="excursions">
+      <h2 class="section-title">Top Excursions in the Region</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Jungfraujoch – Top of Europe</h3>
+          <p>One of the most famous excursions in Switzerland.</p>
+          <a class="btn" href="https://www.jungfrau.ch/en-gb/jungfraujoch-top-of-europe/" target="_blank" rel="noopener">Official Info</a>
+        </div>
+        <div class="card">
+          <h3>Schynige Platte</h3>
+          <p>A classic mountain railway excursion from Wilderswil.</p>
+          <a class="btn" href="https://www.jungfrau.ch/en-gb/schynige-platte/" target="_blank" rel="noopener">Official Info</a>
+        </div>
+        <div class="card">
+          <h3>Grindelwald-First</h3>
+          <p>Beautiful views, hiking and adventure attractions.</p>
+          <a class="btn" href="https://www.jungfrau.ch/en-gb/grindelwaldfirst/" target="_blank" rel="noopener">Official Info</a>
+        </div>
+        <div class="card">
+          <h3>Interlaken</h3>
+          <p>Shopping, lakes, activities and easy connections.</p>
+          <a class="btn" href="https://www.interlaken.swiss/en/" target="_blank" rel="noopener">Official Info</a>
+        </div>
+        <div class="card">
+          <h3>Lauterbrunnen</h3>
+          <p>A famous valley with waterfalls and connections to mountain villages.</p>
+        </div>
+        <div class="card">
+          <h3>Wilderswil Station</h3>
+          <p>An ideal starting point for exploring the whole region by train.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ski">
+      <h2 class="section-title">Ski & Winter Information</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Jungfrau Ski Region</h3>
+          <p>Season information, tickets and winter activities in the region.</p>
+          <span class="badge">Ski</span>
+          <span class="badge">Winter hiking</span>
+          <span class="badge">Sledging</span>
+          <p style="margin-top:12px;">
+            <a class="btn" href="https://www.jungfrau.ch/en-gb/jungfrau-ski-region/" target="_blank" rel="noopener">Ski Region Info</a>
+          </p>
+        </div>
+        <div class="card">
+          <h3>Live Status & Webcams</h3>
+          <p>Check mountain conditions before you travel.</p>
+          <a class="btn" href="https://www.jungfrau.ch/en-gb/live/" target="_blank" rel="noopener">Open Live Status</a>
+        </div>
+        <div class="card">
+          <h3>Winter Hiking & Sledging</h3>
+          <p>Passes and practical information for winter outdoor activities.</p>
+          <a class="btn" href="https://www.jungfrau.ch/en-gb/winter-hiking-and-sledging/" target="_blank" rel="noopener">Open Winter Info</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="guest-card">
+      <h2 class="section-title">Guest Card Information</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>What the guest card includes</h3>
+          <ul class="plain-list">
+            <li>Valid for overnight guests in the region</li>
+            <li>Public transport use within the valid zones</li>
+            <li>Regional discounts and useful guest benefits</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Important Note</h3>
+          <p>The guest card must be correctly completed and stamped by the accommodation.</p>
+          <p>For full details and further information, please ask at reception.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="useful-links">
+      <h2 class="section-title">More Useful Links</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Interlaken Tourism</h3>
+          <p>Official tourism information for the region.</p>
+          <a class="btn" href="https://www.interlaken.swiss/en/" target="_blank" rel="noopener">Open Tourism Site</a>
+        </div>
+        <div class="card">
+          <h3>Tourist Information Office</h3>
+          <p>Need maps, brochures or excursion support?</p>
+          <a class="btn" href="https://www.interlaken.swiss/en/info-service/tourist-offices-in-the-region/interlaken-tourist-information" target="_blank" rel="noopener">Open Tourist Office</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Hotel Berghof Amaranth · Wilderswil – Interlaken
+  </footer>
 </body>
-</html>
+</html> 
