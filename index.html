@@ -1,156 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Berghof Amaranth</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Berghof Amaranth | Guest Guide</title>
+  <style>
+    :root{
+      --bg:#fcf8f3;
+      --bg-soft:#f6efe7;
+      --card:#ffffff;
+      --text:#493a34;
+      --muted:#7c6a63;
+      --line:#eadfd4;
+      --accent:#b67c5f;
+      --accent-dark:#9d654a;
+      --shadow:0 10px 30px rgba(109, 76, 58, 0.08);
+      --radius:22px;
+    }
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fbf6ef;
-  color: #352924;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-header {
-  text-align: center;
-  padding: 50px 20px;
-  background: #f5eadc;
-}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
 
-h1 {
-  color: #b86449;
-  margin: 0;
-  font-size: 40px;
-}
+    .hero{
+      text-align:center;
+      padding:48px 20px 28px;
+      background:linear-gradient(180deg, #fcf8f3 0%, #fbf6f1 100%);
+    }
 
-h2 {
-  color: #8e4b45;
-}
+    .logo{
+      font-weight:800;
+      text-transform:uppercase;
+      color:var(--accent);
+      letter-spacing:.04em;
+      line-height:.95;
+      font-size:clamp(34px, 5vw, 64px);
+      margin:0;
+    }
 
-.container {
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
+    .sublogo{
+      margin-top:8px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:13px;
+    }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
+    .hero h1{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:clamp(36px, 5vw, 64px);
+      color:var(--accent);
+      margin:28px 0 8px;
+      line-height:1.05;
+    }
 
-.section-title {
-  margin-top: 40px;
-}
+    .hero h2{
+      margin:0;
+      font-size:clamp(22px, 3vw, 42px);
+      color:var(--text);
+      font-weight:800;
+    }
 
-a {
-  color: #b86449;
-  text-decoration: none;
-}
+    .hero p{
+      max-width:900px;
+      margin:14px auto 0;
+      color:var(--muted);
+      font-size:18px;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
-</style>
+    .topbar{
+      max-width:1180px;
+      margin:28px auto 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
 
-</head>
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
 
-<body>
+    .pill{
+      display:inline-block;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid #d9c7b8;
+      color:var(--text);
+      background:transparent;
+      font-weight:600;
+      font-size:14px;
+    }
 
-<header>
-  <h1>Hotel Berghof Amaranth</h1>
-  <p>Guest Information & Region Guide</p>
-</header>
+    .pill.active{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+    }
 
-<div class="container">
+    .lang-social{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+    }
 
-<h2 class="section-title">Hotel Information</h2>
+    .container{
+      width:min(1180px, 92%);
+      margin:24px auto 60px;
+    }
 
-<div class="card">
-<h2>Reception</h2>
-<p>08:00 – 22:00</p>
-</div>
+    section{
+      padding-top:24px;
+    }
 
-<div class="card">
-<h2>Wi-Fi / WLAN</h2>
-<p><strong>Network:</strong> Hotel Berghof</p>
-<p><strong>Password:</strong> Berg-2026</p>
-</div>
+    .section-title{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:clamp(32px, 4vw, 52px);
+      margin:0 0 8px;
+      color:var(--text);
+    }
 
-<div class="card">
-<h2>Breakfast</h2>
-<p>Please ask reception for breakfast times</p>
-</div>
+    .section-sub{
+      margin:0 0 24px;
+      color:var(--muted);
+      font-size:17px;
+    }
 
-<div class="card">
-<h2>Check-out</h2>
-<p>11:00</p>
-</div>
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:18px;
+    }
 
-<div class="card">
-<h2>Important Information</h2>
-<ul>
-<li>Pets allowed: 15 CHF / night</li>
-<li>Quiet time after 22:00</li>
-<li>No smoking inside</li>
-</ul>
-</div>
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
 
-<div class="card">
-<h2>Emergency Contact</h2>
-<p>+41 76 752 94 07</p>
-</div>
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
 
-<h2 class="section-title">Train, Tickets & Useful Links</h2>
-
-<div class="card">
-<a href="https://www.sbb.ch/en" target="_blank">SBB Timetable</a><br><br>
-<a href="https://www.jungfrau.ch/en-gb/prices-and-tickets/" target="_blank">Jungfrau Tickets</a><br><br>
-<a href="https://www.interlaken.swiss/en/" target="_blank">Interlaken Tourism</a>
-</div>
-
-<div class="card">
-<h2>Tickets at Reception</h2>
-<p>Train tickets for the Jungfrau region and the Top of Europe Pass are available at reception.</p>
-</div>
-
-<h2 class="section-title">Top Attractions</h2>
-
-<div class="card">
-<ul>
-<li>Jungfraujoch – Top of Europe</li>
-<li>Grindelwald First</li>
-<li>Lauterbrunnen</li>
-<li>Schynige Platte</li>
-<li>Interlaken</li>
-</ul>
-</div>
-
-<h2 class="section-title">Ski & Winter Information</h2>
-
-<div class="card">
-<a href="https://www.jungfrau.ch/en-gb/jungfrau-ski-region/" target="_blank">Jungfrau Ski Region</a><br><br>
-<a href="https://www.jungfrau.ch/en-gb/live/" target="_blank">Live Status & Webcams</a>
-</div>
-
-<h2 class="section-title">Guest Card</h2>
-
-<div class="card">
-<p>Free public transport within the valid area and discounts in the region.</p>
-</div>
-
-<h2 class="section-title">Leave us a review</h2>
-
-<div class="card">
-<p>We hope you enjoyed your stay. We would love to hear your feedback.</p>
-⭐⭐⭐⭐⭐
-</div>
-
-</div>
-
-</body>
-</html>
+    .card h3{
+      margin:0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:22px;
+      color
